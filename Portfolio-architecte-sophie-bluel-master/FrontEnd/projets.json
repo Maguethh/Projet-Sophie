@@ -1,0 +1,69 @@
+[
+    {
+        "id": 1,
+        "image": "./assets/images/abajour-tahina.png",
+        "description":"Abajour Tahina",
+        "categorie":"objet"
+        
+    },
+    {
+        "id": 2,
+        "image": "assets/images/appartement-paris-v.png",
+        "description":"Appartement Paris V",
+        "categorie":"appartement"
+    },
+    {
+        "id": 3,
+        "image": "assets/images/restaurant-sushisen-londres.png",
+        "description":"Restaurant Sushisen - Londres",
+        "categorie":"hotel-restaurant"
+    },
+    {
+        "id": 4,
+        "image": "assets/images/la-balisiere.png",
+        "description":"Villa “La Balisiere” - Port Louis",
+        "categorie":"appartement"
+    },
+    {
+        "id": 5,
+        "image": "assets/images/structures-thermopolis.png",
+        "description":"Structures Thermopolis",
+        "categorie":"objet"
+    },
+    {
+        "id": 6,
+        "image": "assets/images/appartement-paris-x.png",
+        "description":"Appartement Paris X",
+        "categorie":"appartement"
+    },
+    {
+        "id": 7,
+        "image": "assets/images/le-coteau-cassis.png",
+        "description":"Pavillon “Le coteau” - Cassis",
+        "categorie":"appartement"
+    },
+    {
+        "id": 8,
+        "image": "assets/images/villa-ferneze.png",
+        "description":"Villa Ferneze - Isola d’Elba",
+        "categorie":"appartement"
+    },
+    {
+        "id": 9,
+        "image": "assets/images/appartement-paris-xviii.png",
+        "description":"Appartement Paris XVIII",
+        "categorie":"appartement"
+    },
+    {
+        "id": 10,
+        "image": "assets/images/bar-lullaby-paris.png",
+        "description":"Bar “Lullaby” - Paris",
+        "categorie":"hotel-restaurant"
+    },
+    {
+        "id": 11,
+        "image": "assets/images/hotel-first-arte-new-delhi.png",
+        "description":"Hotel First Arte - New Delhi",
+        "categorie":"appartement"
+    }
+]
