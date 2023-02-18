@@ -8,8 +8,7 @@
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 	<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=Work+Sans&display=swap" rel="stylesheet">
 	<meta name="description" content="">
-	<link rel="stylesheet" href="./assets/style.css">
-	<script type="module" src="../Backend/card.js"></script>
+	<link rel="stylesheet" href="./assets/style.css">	
 	<script src="https://kit.fontawesome.com/abc6ee2392.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -85,8 +84,27 @@
 	<p class="modaletext">Galerie photo</p>
 	<div class="modalecontent">
 	</div>
+	<div id="project_creation_form" class="form">
+
+		<div id="photo_upload_container" class="photo_upload_container">
+			<button id="photo_upload_button">Ajouter une photo</button>
+		</div>
+		<input id="photo" type="file" name="photo" style="display: none;">
+
+		<label for="title">Titre</label>
+		<input id="title" type="text" name="title">
+
+		<label for="category">Catégorie</label>
+		<select id="category" name="category">
+			<option value="1">Test Sam</option>
+		</select>
+
+		<button id="project_creation_submit">Valider</button>
+				
+	</div>
 	<button class="ajouter-image">Ajouter une photo</button>
 	<button class="supprimer-image">Supprimer la galerie</button>
 </div>
+<script type="module" src="./scripts/card.js"></script>
 </body>
 </html>

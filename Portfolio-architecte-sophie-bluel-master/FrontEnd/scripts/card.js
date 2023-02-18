@@ -107,3 +107,31 @@ document
       forEach((el) => element.classList.remove("modaleactive"));
     event.target.classList.add("modaleactive");
   });
+
+document.getElementById('photo_upload_button').addEventListener('click', function() {
+  document.getElementById('photo').click()
+})
+
+document.getElementById('project_creation_submit').addEventListener('click', function() {
+  let data = new FormData()
+  data.append("title", document.getElementById('title').value)
+  data.append("category", document.getElementById('category').value)
+  data.append("image", document.getElementById('photo').files[0]) 
+  let url = 'http://localhost:5678/api/works';
+  // console.log(data)
+  fetch(url, {
+    method: "POST",
+    headers: {            
+      "Authorization" : "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEsImlhdCI6MTY3NjcxNTExNywiZXhwIjoxNjc2ODAxNTE3fQ.7gEfs9kJPHBFdIV9okB6SPvTQMRpvXxjeXnDmATqoCw"
+    },
+    body: data
+  })
+  .then(response => response.json())
+  .then(data => {
+    console.log(data)
+    // todo : display the new image
+    })  
+  .catch(error => {
+    console.log(error)
+  })
+})
