@@ -14,8 +14,12 @@ function login() {
     .then((data) => {
       console.log(data);
       if (data.token) {
-        window.location.href = "/FrontEnd/index.html";
+        window.localStorage.setItem("token", data.token)
+        window.localStorage.getItem("token")
+        window.location.href = "/index.html";
+        //TODO : qunad on est connecte on voit le bouton "modifier", sinon, non
       } else {
+        // TODO : afficher une erreur dans la page
         alert("Error : " + data.message);
       }
     })

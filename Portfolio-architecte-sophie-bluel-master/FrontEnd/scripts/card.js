@@ -1,6 +1,8 @@
 const reponse = await fetch("projets.json");
 const projets = await reponse.json();
 
+// TODO : fermer la modal au click "en dehors"
+
 function genererCards(projets) {
   for (let i = 0; i < projets.length; i++) {
     const card = projets[i];
@@ -42,8 +44,6 @@ function genererCardsModale(projets) {
   }
 }
 
-genererCardsModale(projets);
-
 genererCards(projets);
 
 const filtreTous = document.querySelector(".btn-tous");
@@ -79,34 +79,45 @@ filtreHotelRestaurant.addEventListener("click", function () {
   genererCards(cardFiltrees);
 });
 
-document
-  .getElementById("closemodale")
-  .addEventListener("click", function (event) {
-    console.log(event.target);
-    document.getElementById("modale").style.display = "none";
-  });
 
+/* MODALE */
+var selectedImageId = 0
 const boutonModale = document.querySelector(".modifier");
 boutonModale.addEventListener("click", function () {
+  // si le contenu de la modale n'a pas encore été intialisé, 
+  // initialisation
+  if (document.querySelectorAll(".modalecontent article").length == 0) {
+    // affichage des images
+    genererCardsModale(projets);
+    // click sur le close
+    document.getElementById("closemodale").addEventListener("click", function (event) {    
+      document.getElementById("modale").style.display = "none";
+    });
+    // click sur chaque image
+    let images = document.querySelectorAll('.modaleimage').forEach(elt => {
+      elt.addEventListener('click', (event) => {
+        document.querySelectorAll('.modaleimage.selected').forEach(elt => {
+          elt.classList.remove('selected')
+        })
+        event.target.classList.add("selected");
+        selectedImageId = event.target.id.replace('modale-carte-', '')
+        console.log("selected Id : " + selectedImageId)
+      })
+    });  
+    // click sur supprimer
+    const modaleSupprimer = document.querySelector(".supprimer-image");
+    modaleSupprimer.addEventListener("click", function () {      
+      // TODO envoyer au serveur la suppression de l'image... 
+      if (selectedImageId == 0) return;
+      let elementToRemove = document.getElementById("modale-carte-" + selectedImageId);
+      elementToRemove.parentNode.parentNode.removeChild(elementToRemove.parentNode);
+    });  
+  }
   document.getElementById("modale").style.display = "block";
 });
 
-const modaleSupprimer = document.querySelector(".supprimer-image");
-console.log(modaleSupprimer);
-modaleSupprimer.addEventListener("click", function () {
-  console.log("modaleSupprimer");
-  let id = 11;
-  let elementToRemove = document.getElementById("carte-" + id);
-  elementToRemove.parentNode.removeChild(elementToRemove);
-});
 
-document
-  .querySelector(".modaleimage")
-  .addEventListener("click", function (event) {
-    document.querySelector(".modaleactive"),
-      forEach((el) => element.classList.remove("modaleactive"));
-    event.target.classList.add("modaleactive");
-  });
+
 
 document.getElementById('photo_upload_button').addEventListener('click', function() {
   document.getElementById('photo').click()

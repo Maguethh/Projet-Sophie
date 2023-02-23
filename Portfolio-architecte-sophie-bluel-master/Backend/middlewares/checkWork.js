@@ -1,5 +1,7 @@
 module.exports = (req, res, next) => {
 	try{
+		console.log("check work")
+		console.log(req.body)
 		const host = req.get('host');
 		const title = req.body.title.trim() ?? undefined;
 		const categoryId = parseInt(req.body.category) ?? undefined;
@@ -16,9 +18,12 @@ module.exports = (req, res, next) => {
 			req.work = {title, categoryId, userId, imageUrl}
 			next()
 		}else{
+			console.log("bad request")
 			return res.status(400).json({error: new Error("Bad Request")})
 		}
 	}catch(e){
+		console.log("someting wrong")
+		console.log(e)
 		return res.status(500).json({error: new Error("Something wrong occured")})
 	}
 

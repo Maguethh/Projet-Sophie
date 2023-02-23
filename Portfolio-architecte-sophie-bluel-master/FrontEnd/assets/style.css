@@ -383,6 +383,10 @@ a {
 	cursor: pointer;
 }
 
+.modaleimage.selected {
+	border: solid 3px darkgreen;
+}
+
 .modaleactive {
 	border: solid 4px darkgreen;
 }
