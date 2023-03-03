@@ -79,37 +79,51 @@
 		</ul>
 	</nav>
 </footer>
+
+
+<div id="modalefilter1"></div>
+
 <div id="modale">
-	<span id="closemodale">X</span>
+		<span id="closemodale">X</span>
 
-	<div id="gallery">
 
-		<p class="modaletext">Galerie photo</p>
-		<div class="modalecontent">
+		<div id="gallery">
+			
+			<p class="modaletext">Galerie photo</p>
+			<div class="modalecontent">
+			</div>
 		</div>
+		
+		
+		<div id="project_creation_form" class="form" style="display: none">
+			
+			<p class="modaletext2">Ajouter photo</p>
+			
+			<div id="photo_upload_container" class="photo_upload_container">
+				<button id="photo_upload_button">Ajouter une photo</button>
+			</div>
+			<input id="photo" type="file" name="photo" style="display: none;">
+			
+			<label for="title">Titre</label>
+			<input id="title" type="text" name="title">
+			
+			<label for="category">Catégorie</label>
+			<select id="category" name="category">
+				<option value="1">Test Sam</option>
+			</select>
+			
+			<button id="project_creation_submit">Valider</button>
+			
+		</div>
+		
+		<div id="modale1btn">
+			<button class="ajouter-image">Ajouter une photo</button>
+			<button class="supprimer-image">Supprimer la galerie</button>
+		</div>
+		
 	</div>
 
-	<div id="project_creation_form" class="form" style="display: none">
-
-		<div id="photo_upload_container" class="photo_upload_container">
-			<button id="photo_upload_button">Ajouter une photo</button>
-		</div>
-		<input id="photo" type="file" name="photo" style="display: none;">
-
-		<label for="title">Titre</label>
-		<input id="title" type="text" name="title">
-
-		<label for="category">Catégorie</label>
-		<select id="category" name="category">
-			<option value="1">Test Sam</option>
-		</select>
-
-		<button id="project_creation_submit">Valider</button>
-				
-	</div>
-	<button class="ajouter-image">Ajouter une photo</button>
-	<button class="supprimer-image">Supprimer la galerie</button>
-</div>
-<script type="module" src="./scripts/card.js"></script>
+	
+	<script type="module" src="./scripts/card.js"></script>
 </body>
 </html>

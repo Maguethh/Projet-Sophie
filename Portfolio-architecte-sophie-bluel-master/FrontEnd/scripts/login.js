@@ -5,7 +5,7 @@ function login() {
   fetch("http://localhost:5678/api/users/login", {
     method: "POST",
     headers: {
-      "Accept": "application/json",
+      Accept: "application/json",
       "Content-Type": "application/json",
     },
     body: JSON.stringify({ email: email, password: password }),
@@ -14,13 +14,15 @@ function login() {
     .then((data) => {
       console.log(data);
       if (data.token) {
-        window.localStorage.setItem("token", data.token)
-        window.localStorage.getItem("token")
-        window.location.href = "/index.html";
+        window.localStorage.setItem("token", data.token);
+        window.localStorage.getItem("token");
+        window.location.href = "../Frontend/index.html";
+        document.querySelector(".modifier").style.display = "block";
         //TODO : qunad on est connecte on voit le bouton "modifier", sinon, non
       } else {
-        // TODO : afficher une erreur dans la page
-        alert("Error : " + data.message);
+        document.querySelector(".error-message").style.display = "block";
+        errormessage.innerHTML = "Error : " + data.message;
+        document.querySelector(".modifier").style.display = "none";
       }
     })
     .catch((error) => {
@@ -28,3 +30,5 @@ function login() {
     });
 }
 document.getElementById("submitButton").addEventListener("click", login);
+
+const errormessage = document.querySelector(".error-message");

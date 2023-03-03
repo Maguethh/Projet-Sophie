@@ -201,7 +201,9 @@ footer nav ul {
 	position: fixed;
 	border-radius: 15px;
 	display: none;
+	transition: 0.2s;
 }
+
 
 .modalecontent {
 	width: 100%;
@@ -395,6 +397,53 @@ a {
 	height: 200px;
 	width: 60%;
 	margin: 0 auto;
-	background-color: lightskyblue;
+	background-color: #E8F1F7;
+	cursor: pointer;
+
 }
 
+#photo_upload_button {
+	font-family: "Syne";
+	background-color: #CBD6DC;
+	color: white;
+	border-radius: 30px;
+	font-size: 15px;
+	margin-left: 20%;
+	margin-top: 35%;
+	width: 60%;
+	padding: 10px;
+	color: #306685;	
+	border: none;
+}
+
+.error-message {
+	display: none;
+	color: red;
+}
+
+#project_creation_form {
+
+	display: none;
+}
+
+.modaletext2 {
+	text-align: center;
+	font-family: 'Syne';
+	margin-top: 6%;
+	font-size: 30px;
+	font-weight: lighter;
+	padding-bottom: 20px;
+
+}
+#modalefilter1 {
+	display: none;
+	position: fixed;
+	z-index: 2;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%,-50%);
+	width: 100%;
+	height: 100%;
+	overflow: auto;
+	background-color: rgba(0, 0, 0, 0.30);
+}
